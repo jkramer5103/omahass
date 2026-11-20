@@ -1,0 +1,67 @@
+{
+  "config": {
+    "flow_title": "{name}",
+    "step": {
+      "user": {
+        "title": "Connect an Omarchy PC",
+        "description": "Enter the address of a PC running omahassd. The pairing key is shown in the Omarchy bar under Home Assistant → This PC, or with `omahassd key`.",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "key": "Pairing key"
+        }
+      },
+      "pair": {
+        "title": "Pair {name}",
+        "description": "Found **{name}** at {host}. Enter the pairing key shown in the Omarchy bar under Home Assistant → This PC.",
+        "data": {
+          "key": "Pairing key"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-pair {name}",
+        "description": "The PC no longer accepts the saved pairing key. Enter the current one from the Omarchy bar.",
+        "data": {
+          "key": "Pairing key"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Couldn't reach the PC. Is omahassd running and the port open?",
+      "invalid_key": "The PC rejected that pairing key.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This PC is already set up.",
+      "reauth_successful": "Re-paired successfully."
+    }
+  },
+  "services": {
+    "send_actionable": {
+      "name": "Send actionable notification",
+      "description": "Show a desktop notification with buttons. A press fires the omahass_notification_action event.",
+      "fields": {
+        "message": {
+          "name": "Message",
+          "description": "Notification body."
+        },
+        "title": {
+          "name": "Title",
+          "description": "Notification title."
+        },
+        "actions": {
+          "name": "Actions",
+          "description": "List of {action, title} buttons."
+        },
+        "tag": {
+          "name": "Tag",
+          "description": "Returned with the action event so automations can tell notifications apart."
+        },
+        "urgency": {
+          "name": "Urgency",
+          "description": "low, normal or critical."
+        }
+      }
+    }
+  }
+}

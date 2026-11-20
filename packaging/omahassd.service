@@ -1,0 +1,15 @@
+[Unit]
+Description=omahass: Home Assistant bridge for Omarchy
+PartOf=graphical-session.target
+After=graphical-session.target
+
+[Service]
+ExecStart=%h/.local/bin/omahassd
+Restart=on-failure
+RestartSec=3
+# Hard ceiling; the daemon idles around 20 MB and caps its own heap at 48 MiB.
+MemoryMax=128M
+MemorySwapMax=0
+
+[Install]
+WantedBy=graphical-session.target

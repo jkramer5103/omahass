@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "omahass",
+  "name": "Home Assistant (omahass)",
+  "version": "0.1.0",
+  "author": "jkramer5103",
+  "license": "MIT",
+  "description": "Control Home Assistant from the bar, and expose this PC to Home Assistant, via the omahassd daemon.",
+  "kinds": [
+    "service",
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "HassWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Home Assistant",
+    "description": "Favorites, device picker and This PC settings for Home Assistant.",
+    "category": "Home",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "domain": "omahass",
+  "name": "Omarchy PC",
+  "codeowners": ["@jkramer5103"],
+  "config_flow": true,
+  "documentation": "https://github.com/jkramer5103/omahass",
+  "issue_tracker": "https://github.com/jkramer5103/omahass/issues",
+  "integration_type": "device",
+  "iot_class": "local_push",
+  "requirements": [],
+  "version": "0.1.0",
+  "zeroconf": ["_omahass._tcp.local."]
+}

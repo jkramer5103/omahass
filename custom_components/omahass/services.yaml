@@ -1,0 +1,28 @@
+send_actionable:
+  target:
+    entity:
+      integration: omahass
+      domain: notify
+  fields:
+    message:
+      required: true
+      selector:
+        text:
+          multiline: true
+    title:
+      selector:
+        text:
+    actions:
+      example: '[{"action": "open_door", "title": "Open door"}]'
+      selector:
+        object:
+    tag:
+      selector:
+        text:
+    urgency:
+      selector:
+        select:
+          options:
+            - low
+            - normal
+            - critical
